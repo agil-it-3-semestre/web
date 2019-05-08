@@ -1,0 +1,37 @@
+.fundo{
+  background-image: url('../../assets/images/background.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.logo{
+  padding: 10px;
+  float: left;
+}
+
+.login {
+  margin-top: 100px;
+}
+
+.login .card {
+  background: rgba(0, 0, 0, .6);
+}
+
+.login label{
+  font-size: 16px;
+  color: white;
+}
+
+.login input{
+  font-size: 15px !important;
+  color: #26a69a;
+}
+
+.login button:hover{
+  padding: 0px 40px;
+}
+
+.row {
+  width: 30%;
+}

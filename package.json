@@ -1,0 +1,23 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Projeto Web da Agil.It",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agil-it/web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agil-it/web/issues"
+  },
+  "homepage": "https://github.com/agil-it/web#readme",
+  "devDependencies": {
+    "@angular/cli": "^7.3.9"
+  }
+}
