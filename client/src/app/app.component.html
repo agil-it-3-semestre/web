@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<div *ngIf="(user$ | async) as user; else standAlone" class="layout-concept">
+
+  <div class="lateral-flex">
+      <ma-nav-bar></ma-nav-bar>
+  </div>
+
+  <div class="component-flex">
+      <router-outlet></router-outlet>
+  </div>
+</div>
+
+<ng-template #standAlone>
+<div class="standAlone">
+    <router-outlet></router-outlet>
+</div>
+</ng-template>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators }  from '@angular/forms';
+import { AuthService } from '../core/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +11,28 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
-    LogIn() {
+  loginForm: FormGroup;
 
-      localStorage.setItem('token', 'luquinhas');
-      this.router.navigate(['home']);
+  constructor(private formBuilder: FormBuilder, private router: Router,private authService: AuthService) { }
+  LogIn() {
+    
+    const userName = this.loginForm.get('userName').value;
+    const password = this.loginForm.get('password').value;
+
+    let autenticado = this.authService.authenticate(userName, password)
+    if (!autenticado){
+        this.loginForm.reset();
+        alert('Invalid user name or password');
     }
+    this.router.navigate(['']);
+  }
 
   ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      userName: ['', Validators.required],
+      password: ['', Validators.required],
+      remember: [false]
+    });
   }
 
 }

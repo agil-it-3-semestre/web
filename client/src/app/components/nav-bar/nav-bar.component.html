@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"fixedInViewport="true"
+      [mode]="'side'"
+      [opened]="true">
+    <mat-toolbar>
+      <img class="logoMenu" src="../../../assets/images/logo.png">
+    </mat-toolbar>
+    <mat-nav-list>
+      <ma-nav-item
+        *ngFor="let link of links" 
+        [icone]="link.icon" 
+        [nome]="link.name"
+        [redirect]="link.redirect"
+        >
+      </ma-nav-item>
+    </mat-nav-list>
+    <mat-nav-list>
+      <ma-nav-item (click)="logout()"
+          icone="power_settings_new" 
+          nome="Logout">
+      </ma-nav-item>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

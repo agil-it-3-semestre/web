@@ -1,31 +1,24 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { Authentication } from './services/auth/authentication';
+import { RouterModule, Routes } from '@angular/router';
+
+/* Importando Componentes */
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { MonitorComponent } from './components/monitor/monitor.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { AuthGuard } from './core/auth/auth.guard';
+import { LoginGuard } from './core/auth/login.guard';
+import { CreateOrderComponent } from './components/create-order/create-order.component';
 
 const routes: Routes = [
-  // login
-  {
-    path: '',
-    component: LoginComponent
-  },
-  // home
-  {
-      path: 'home',
-      component: HomeComponent,
-      canActivate: [ Authentication    ]
-  },
-  // login
-  {
-    path: 'login',
-    component: LoginComponent
-  }
-
+  {path: "", component: MonitorComponent, canActivate: [AuthGuard]},
+  {path: "login", component: LoginComponent, canActivate: [LoginGuard]},
+  {path: "create-order", component: CreateOrderComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [ RouterModule ],
+  imports: [
+    RouterModule.forRoot(routes)
+  ]
 })
 export class AppRoutingModule { }
