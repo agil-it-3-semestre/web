@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private router: Router,private authService: AuthService) { }
   LogIn() {
-    
+
     const userName = this.loginForm.get('userName').value;
     const password = this.loginForm.get('password').value;
 
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         this.loginForm.reset();
         alert('Invalid user name or password');
     }
-    this.router.navigate(['']);
+    this.router.navigate(['create-order']);
   }
 
   ngOnInit() {

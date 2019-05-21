@@ -1,3 +1,50 @@
-<p>
-  create-order works!
-</p>
+<h2>CADASTRAR ORDEM DE MANUTENÇÃO</h2>
+<form class="form-order">
+  <mat-form-field class="title">
+    <input matInput placeholder="Título da Ordem">
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>Equipamento</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let machine of machines" [value]="">
+        {{machine.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>Setor</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let sector of sectors" [value]="">
+        {{sector.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field class="">
+    <input matInput placeholder="Técnico Responsável">
+  </mat-form-field><br>
+
+  <mat-form-field class="">
+      <input matInput placeholder="Hora Inicial">
+  </mat-form-field><br>
+
+  <mat-form-field class="">
+      <input matInput placeholder="Hora Final">
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-select placeholder="Tipo Manutenção">
+      <mat-option value="yes">Corretiva</mat-option>
+      <mat-option value="no">Preventida</mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field class="notes">
+    <textarea matInput placeholder="Observações"></textarea>
+  </mat-form-field><br>
+  <div class="button-save">
+    <button mat-button>Salvar</button>
+  </div>
+</form>

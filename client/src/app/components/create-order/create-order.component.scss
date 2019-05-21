@@ -1,0 +1,28 @@
+h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-form-field{
+  width: 50%;
+  margin-bottom: 5px;
+  margin-left: 20%;
+}
+
+form{
+  margin-top: 5%;
+}
+
+.button-save{
+  color: white;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 10%;
+  float: right;
+  margin-right: 20%;
+  border-radius: 5px;
+}

@@ -13,18 +13,20 @@ import { LoginComponent } from './login/login.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NavBarModule } from './components/nav-bar/nav-bar.module';
 import { CreateOrderComponent } from './components/create-order/create-order.component';
+import { CreateMachineComponent } from './components/create-machine/create-machine.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CreateOrderComponent
+    CreateOrderComponent,
+    CreateMachineComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    LayoutModule, 
+    LayoutModule,
     MaterialModule,
     MonitorModule,
     NavBarModule,
