@@ -9,12 +9,15 @@ import { AuthGuard } from "./core/auth/auth.guard";
 import { LoginGuard } from "./core/auth/login.guard";
 import { CreateOrderComponent } from "./components/create-order/create-order.component";
 import { CreateMachineComponent } from './components/create-machine/create-machine.component';
+import { CreateUserComponent } from './components/create-user/create-user.component';
+
 
 const routes: Routes = [
   { path: "", component: MonitorComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent, canActivate: [LoginGuard] },
   { path: "create-order", component: CreateOrderComponent },
   { path: "create-machine", component: CreateMachineComponent},
+  { path: "create-user", component: CreateUserComponent},
 ];
 
 @NgModule({

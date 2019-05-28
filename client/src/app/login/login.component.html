@@ -1,38 +1,17 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-<div class='fundo'>
-  <div class="logo">
-    <img src="../../assets/images/logo.png" width="60%" height="100%">
-  </div>
-  <form [formGroup]="loginForm" class="login-container" (submit)="LogIn()">
-    <div class='row login'>
-      <div class="col s12 14 offset-14">
-        <div class="card">
-          <div class="card-action red white-text">
-            <h3>LOGIN</h3>
-          </div>
-          <div class="card-content">
-            <div class="form-field">
-              <label for="username">Usuário</label>
-              <input type="text" id="username" formControlName="userName">
-            </div>
-            <br>
-            <div class="form-field">
-              <label for="password">Senha</label>
-              <input type="password" id="password" formControlName="password">
-            </div>
-            <br>
-            <div class="form-field">
-              <input type="checkbox" id="remember" formControlName="remember">
-              <label for="remember">Lembra- me?</label>
-            </div>
-            <br>
-            <div class="form-field center-align">
-              <button class="btn-large red " [disabled]="loginForm.invalid">Entrar</button>
-            </div>
-            <br>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
+<div class="fundo">
 </div>
+<div>
+  <h1>LOGIN</h1>
+</div>
+<div>
+  <h2>AGIL.IT</h2>
+</div>
+<div>
+  <h3>Sistema Gerenciador de Manutenção</h3>
+</div>
+<form class="form">
+  <input type="text" id="user" placeholder="Email"><br>
+  <input type="password" id="password" placeholder="Senha"><br>
+  <button>ENTRAR</button>
+</form>
+
