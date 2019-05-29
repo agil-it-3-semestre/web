@@ -18,28 +18,28 @@ export class AuthService {
         password : password
     }
     this.http.url = "http://localhost:3000/api/v1/login"
-    console.log("json-login",object);
 
-    return await this.http.post(object).subscribe(
-      (data:any) => {
-
-        let response = data._body
-        console.log("data---->",data);
-
-        let json = {
-          id: response.id,
-          name: response.name,
-          email: response.email
+    return await this.http.post(object).toPromise()
+    .then(
+        (data:any) => {
+  
+          let response = data._body
+  
+          let json = {
+            id: response.id,
+            name: response.name,
+            email: response.email
+          }
+  
+          var token = jwt.encode(json, 'noisépika');
+  
+          this.userService.setToken(token);
+      
+          return true;
         }
-
-        var token = jwt.encode(json, 'noisépika');
-
-        this.userService.setToken(token);
-    
-        return true;
-      },
+    )
+    .catch(
       (error:any) => {
-        console.log("err---->",error);
         return false;
       }
     )

@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.get('password').value;
 
     let autenticado = await this.authService.login(userName, password)
-    console.log("autenticado---->",autenticado);
     if (!autenticado){
         this.loginForm.reset();
         alert('Invalid user name or password');
