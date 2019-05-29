@@ -1,17 +1,18 @@
-<div class="fundo">
+<div class="background">
 </div>
-<div>
-  <h1>LOGIN</h1>
+<div class="container">
+  <div>
+    <h1>LOGIN</h1>
+  </div>
+  <div>
+    <h2>AGIL.IT</h2>
+  </div>
+  <div>
+    <h3>Sistema Gerenciador de Manutenção</h3>
+  </div>
+  <form [formGroup]="loginForm" class="form">
+    <input formControlName="userName" type="text" id="user" placeholder="Email"><br>
+    <input formControlName="password" type="password" id="password" placeholder="Senha"><br>
+    <button (click)="LogIn()">ENTRAR</button>
+  </form>
 </div>
-<div>
-  <h2>AGIL.IT</h2>
-</div>
-<div>
-  <h3>Sistema Gerenciador de Manutenção</h3>
-</div>
-<form class="form">
-  <input type="text" id="user" placeholder="Email"><br>
-  <input type="password" id="password" placeholder="Senha"><br>
-  <button>ENTRAR</button>
-</form>
-

@@ -15,6 +15,8 @@ import { NavBarModule } from './components/nav-bar/nav-bar.module';
 import { CreateOrderComponent } from './components/create-order/create-order.component';
 import { CreateMachineComponent } from './components/create-machine/create-machine.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+import { HttpProvider } from './core/http/http';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -33,9 +35,12 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
     MonitorModule,
     NavBarModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    HttpProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
