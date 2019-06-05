@@ -12,9 +12,9 @@ export class AuthService {
 
   }
 
-  public async login(userName : any, password : any ){
+  public async login(email : any, password : any ){
       const object = {
-        login : userName,
+        email : email,
         password : password
     }
     this.http.url = "http://localhost:3000/api/v1/login"

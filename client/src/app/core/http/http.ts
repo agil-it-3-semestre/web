@@ -78,4 +78,30 @@ export class HttpProvider {
 
     return this.http.patch(this.url, body, {headers: headers}).pipe(timeout(this.TIMEOUT));
   }
+
+  public delete(){
+    let headers = this.prepareHeaders(false);
+    return this.http.delete(
+      this.url, 
+      {headers: headers}
+    ).pipe(
+      timeout(this.TIMEOUT)
+    )
+  }
+
+  public send(tipo:string, object?:any) {
+    if (tipo === 'get') {
+      return this.get()
+    } else if(tipo === 'delete') {
+      return this.delete()
+    } else if(tipo === 'post') {
+      return this.post(object)
+    } else if(tipo === 'put') {
+      return this.put(object)
+    } else if(tipo === 'patch') {
+      return this.patch(object)
+    }
+
+    throw new Error('Invalid http method!')
+  }
 }

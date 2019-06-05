@@ -14,11 +14,11 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router,private authService: AuthService) { 
-
+    
   }
 
   async LogIn() {
-
+    
     const userName = this.loginForm.get('userName').value;
     const password = this.loginForm.get('password').value;
 
