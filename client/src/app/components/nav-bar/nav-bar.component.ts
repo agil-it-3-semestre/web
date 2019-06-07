@@ -29,27 +29,27 @@ export class NavBarComponent implements OnInit {
     let link5;
 
     link1 = {
-      "name":"Empresa",
+      "name":"Setor",
       "icon":"store_mall_directory",
-      "redirect":"empresa"
+      "redirect":"create-sector"
     };
 
     link2 = {
       "name":"Ordens",
       "icon":"assignment_ind",
-      "redirect":"terceiros"
+      "redirect":"create-order"
     };
 
     link3 = {
       "name":"Máquinas",
       "icon":"ac_unit",
-      "redirect":"maquinas"
+      "redirect":"create-machine"
     };
 
     link4 = {
-      "name":"Monitorar",
+      "name":"Monitor",
       "icon":"remove_red_eye",
-      "redirect":"monitor"
+      "redirect":""
     };
 
     this.links.push(link1);

@@ -12,5 +12,4 @@ export class EquipmentProvider extends Requests {
     super(http);
     this.setModule('equipments')
   }
-
 }

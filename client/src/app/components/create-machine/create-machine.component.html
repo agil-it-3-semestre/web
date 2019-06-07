@@ -1,27 +1,20 @@
-<h2>CADASTRAR MÁQUINAS</h2>
-<form class="form-order">
+<h1>CADASTRAR EQUIPAMENTO</h1>
+<form [formGroup]="machineForm" class="form-order">
+    
   <mat-form-field class="title">
-    <input matInput placeholder="Equipamento">
-  </mat-form-field><br>
-
-  <mat-form-field>
-    <input matInput placeholder="Descrição">
+    <input formControlName="description" type="text" id="description" matInput placeholder="Equipamento">
   </mat-form-field><br>
 
   <mat-form-field>
     <mat-label>Setor</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let sector of sectors" [value]="">
-        {{sector.name}}
+    <mat-select formControlName="sectorId">
+      <mat-option *ngFor="let sector of sectors" [value]="sector.id">
+        {{sector.description}}
       </mat-option>
     </mat-select>
   </mat-form-field><br>
 
-  <mat-form-field class="">
-    <input matInput placeholder="Operador">
-  </mat-form-field><br>
-
   <div class="button-save">
-    <button mat-button>Salvar</button>
+    <button type="submit" (click)="createMachine()" mat-button>Salvar</button>
   </div>
 </form>

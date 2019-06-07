@@ -13,17 +13,16 @@ import { LoginComponent } from './login/login.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NavBarModule } from './components/nav-bar/nav-bar.module';
 import { CreateOrderComponent } from './components/create-order/create-order.component';
-import { CreateMachineComponent } from './components/create-machine/create-machine.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { HttpProvider } from './core/http/http';
 import { HttpModule } from '@angular/http';
+import { CreateMachineModule } from './components/create-machine/create-machine.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CreateOrderComponent,
-    CreateMachineComponent,
     CreateUserComponent
   ],
   imports: [
@@ -36,6 +35,7 @@ import { HttpModule } from '@angular/http';
     NavBarModule,
     FormsModule,
     ReactiveFormsModule,
+    CreateMachineModule,
     HttpModule
   ],
   providers: [

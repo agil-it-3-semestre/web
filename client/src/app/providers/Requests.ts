@@ -48,9 +48,9 @@ export class Requests implements BasicsRequests {
     return ProviderHelper.get(this.http)
   }
   
-  public async create(registryId: number, object:any) {
+  public async create(object:any) {
     
-    this.http.url = this.url + '/' + registryId
+    this.http.url = this.url
     return ProviderHelper.post(this.http, object)
   }
   
