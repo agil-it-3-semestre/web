@@ -10,6 +10,7 @@ import { LoginGuard } from "./core/auth/login.guard";
 import { CreateOrderComponent } from "./components/create-order/create-order.component";
 import { CreateMachineComponent } from './components/create-machine/create-machine.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+import { CreateSectorComponent } from './components/create-sector/create-sector.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "create-order", component: CreateOrderComponent },
   { path: "create-machine", component: CreateMachineComponent},
   { path: "create-user", component: CreateUserComponent},
+  { path: "create-sector", component: CreateSectorComponent},
 ];
 
 @NgModule({

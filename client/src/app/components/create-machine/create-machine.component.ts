@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { EquipmentProvider } from '../../providers/equipment.service';
 import { SectorProvider } from '../../providers/sector.service';
 
@@ -15,8 +14,7 @@ export class CreateMachineComponent implements OnInit {
   machineForm: FormGroup;
   sectors : any =[];
 
-  constructor(private formBuilder: FormBuilder, 
-    private router: Router, 
+  constructor(private formBuilder: FormBuilder,
     private equipmentProvider : EquipmentProvider,
     private sectorProvider : SectorProvider) { }
 
@@ -30,21 +28,37 @@ export class CreateMachineComponent implements OnInit {
     const description = this.machineForm.get('description').value;
     const sectorId = this.machineForm.get('sectorId').value;
 
-    let response = await this.equipmentProvider.create({
-      description: description,
-      sectorId: sectorId
-    })
 
-    alert("Equipamento cadastrado com sucesso!");
-    this.machineForm.reset();
+    try {
+      let response = await this.equipmentProvider.create({
+        description: description,
+        sectorId: sectorId
+      })
+      
+      if (response.status !== 200) {
+        alert(response.body.error)
+        return
+      }
+
+      alert("Equipamento cadastrado com sucesso!");
+      this.machineForm.reset();
+    } catch (error) {
+      alert(error)
+    }
   }
 
   async getSectors(){
-    this.sectors = JSON.parse(await this.sectorProvider.getList());
+    let sectors = await this.sectorProvider.getList();
+    return sectors.body.length > 0 ? sectors.body : [];
+  }
+
+  async updateSectors() {
+    this.sectors = await this.getSectors()
   }
 
   ngOnInit() {
-    this.getSectors();
+    this.updateSectors()
+    
     this.machineForm = this.formBuilder.group({
       description: ['', Validators.required],
       sectorId: ['', Validators.required]

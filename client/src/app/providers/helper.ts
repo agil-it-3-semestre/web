@@ -7,18 +7,17 @@ export class ProviderHelper {
     return await http.send(tipo, body).toPromise()
     .then(
       (data:any) => {
-        return data._body
+        return {
+          status: data.status,
+          body: JSON.parse(data._body)
+        }
       }
     )
     .catch(
       (error:any) => {
-        let { name, message } = error
-        
         return {
-          error: {
-            name: name,
-            message: message
-          }
+          status: error.status,
+          body: JSON.parse(error._body)
         }
       }
     )

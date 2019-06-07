@@ -1,0 +1,20 @@
+<h1>CADASTRAR SETOR</h1>
+<form [formGroup]="sectorForm" class="form-order">
+  
+  <mat-form-field *ngIf="sectors.length>1">
+    <mat-label>Setor</mat-label>
+    <mat-select formControlName="id" (blur)="treatSector()">
+      <mat-option *ngFor="let sector of sectors" [value]="sector.id">
+        {{sector.description}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+  
+  <mat-form-field class="title">
+    <input formControlName="description" type="text" matInput placeholder="Descrição">
+  </mat-form-field><br>
+
+  <div class="button-save">
+    <button type="submit" (click)="saveSector()" mat-button>Salvar</button>
+  </div>
+</form>
