@@ -4,13 +4,12 @@ import { RouterModule, Routes } from "@angular/router";
 /* Importando Componentes */
 import { LoginComponent } from "./login/login.component";
 import { MonitorComponent } from "./components/monitor/monitor.component";
-import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
 import { AuthGuard } from "./core/auth/auth.guard";
 import { LoginGuard } from "./core/auth/login.guard";
-import { CreateOrderComponent } from "./components/create-order/create-order.component";
-import { CreateMachineComponent } from './components/create-machine/create-machine.component';
-import { CreateUserComponent } from './components/create-user/create-user.component';
-import { CreateSectorComponent } from './components/create-sector/create-sector.component';
+import { CreateOrderComponent } from "./components/cruds/create-order/create-order.component";
+import { CreateMachineComponent } from './components/cruds/create-machine/create-machine.component';
+import { CreateUserComponent } from './components/cruds/create-user/create-user.component';
+import { CreateSectorComponent } from './components/cruds/create-sector/create-sector.component';
 
 
 const routes: Routes = [

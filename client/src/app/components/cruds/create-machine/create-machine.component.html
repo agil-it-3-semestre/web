@@ -1,0 +1,33 @@
+<h1>CADASTRAR EQUIPAMENTO</h1>
+<form [formGroup]="machineForm" class="form-order">
+    
+  <mat-form-field *ngIf="machines.length>1">
+    <mat-label>Equipamento</mat-label>
+    <mat-select formControlName="id" (blur)="treatMachine()">
+      <mat-option *ngFor="let machine of machines" [value]="machine.id">
+        {{machine.description}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field class="title">
+    <input formControlName="description" type="text" matInput placeholder="Descrição">
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>Setor</mat-label>
+    <mat-select formControlName="sectorId">
+      <mat-option *ngFor="let sector of sectors" [value]="sector.id">
+        {{sector.description}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <div class="button-save">
+    <button type="submit" (click)="saveMachine()" mat-button>Salvar</button>
+  </div>
+
+  <div class="button-delete" *ngIf="machine?.id">
+    <button type="submit" (click)="deleteMachine()" mat-button>Deletar</button>
+  </div>
+</form>

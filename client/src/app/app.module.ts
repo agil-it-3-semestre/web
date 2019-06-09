@@ -7,6 +7,7 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MomentDateModule } from '@angular/material-moment-adapter';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpModule } from '@angular/http';
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
 
 import { MaterialModule } from './material.module';
@@ -15,11 +16,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { MonitorModule } from './components/monitor/monitor.module';
 import { LoginComponent } from './login/login.component';
 import { NavBarModule } from './components/nav-bar/nav-bar.module';
-import { CreateOrderComponent } from './components/create-order/create-order.component';
-import { CreateUserComponent } from './components/create-user/create-user.component';
+import { CreateOrderComponent } from './components/cruds/create-order/create-order.component';
+import { CreateUserComponent } from './components/cruds/create-user/create-user.component';
 import { HttpProvider } from './core/http/http';
-import { CreateMachineModule } from './components/create-machine/create-machine.module';
-import { CreateSectorModule } from './components/create-sector/create-sector.module';
+import { CreateMachineModule } from './components/cruds/create-machine/create-machine.module';
+import { CreateSectorModule } from './components/cruds/create-sector/create-sector.module';
+import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogModule } from './shared/confirmation-dialog/confirmation-dialog.module';
+import { MessageDialogComponent } from './shared/message-dialog/message-dialog.component';
+import { MessageDialogModule } from './shared/message-dialog/message-dialog.module';
+import { DialogHelper } from './shared/helpers/dialog-helper';
 
 
 export const AGILIT_FORMATS = {
@@ -54,10 +60,18 @@ export const AGILIT_FORMATS = {
     ReactiveFormsModule,
     CreateMachineModule,
     HttpModule,
-    MomentDateModule
+    MomentDateModule, 
+    RxReactiveFormsModule,
+    ConfirmationDialogModule,
+    MessageDialogModule
+  ],
+  entryComponents: [
+    ConfirmationDialogComponent,
+    MessageDialogComponent
   ],
   providers: [
     HttpProvider,
+    DialogHelper,
     { provide: MAT_DATE_LOCALE, useValue: 'it' },
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: AGILIT_FORMATS }

@@ -101,6 +101,106 @@ $mat-white: (
         A700 : #000000,
     )
 );
+
+
+$primary: (
+    50: #f3e1e1,
+    100: #e0b4b4,
+    200: #cc8383,
+    300: #b75151,
+    400: #a72b2b,
+    500: #980606,
+    600: #900505,
+    700: #850404,
+    800: #7b0303,
+    900: #6a0202,
+    A100: #ff9999,
+    A200: #ff6666,
+    A400: #ff3333,
+    A700: #ff1a1a,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+  );
+
+  $dark: (
+    50: #e4e5e5,
+    100: #bdbdbf,
+    200: #919294,
+    300: #646669,
+    400: #434548,
+    500: #222428,
+    600: #1e2024,
+    700: #191b1e,
+    800: #141618,
+    900: #0c0d0f,
+    A100: #55aaff,
+    A200: #2290ff,
+    A400: #0077ee,
+    A700: #006ad4,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+  );
+
+  $light: (
+    50: #fefefe,
+    100: #fcfcfd,
+    200: #fafafc,
+    300: #f7f8fa,
+    400: #f6f7f9,
+    500: #f4f5f8,
+    600: #f3f4f7,
+    700: #f1f2f6,
+    800: #eff0f5,
+    900: #eceef3,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+  );
 /**
   $primary: mat-palette($mat-blue,200);
   $accent: mat-pallete($mat-white,200);
@@ -112,10 +212,16 @@ $mat-white: (
 
 /**/
 
+
+//*
 $my-app-primary: mat-palette($mat-blue-grey);
 $my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
 $my-app-warn:    mat-palette($mat-deep-orange);
-
+/*/*
+$my-app-primary: mat-palette($primary);
+$my-app-accent:  mat-palette($dark);
+$my-app-warn:    mat-palette($light);
+/**/
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
 @include angular-material-theme($my-app-theme);

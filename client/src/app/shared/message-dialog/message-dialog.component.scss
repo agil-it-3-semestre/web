@@ -1,0 +1,12 @@
+.buttons {
+  margin-top: 15px;
+  display: flex; flex-direction: row;
+  justify-content: flex-end;
+}
+
+.button-confirm {
+  color: white;
+  background-color: #980606;
+  cursor: pointer;
+  border-radius: 5px;
+}

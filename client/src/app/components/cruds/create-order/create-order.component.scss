@@ -1,3 +1,8 @@
+form {
+  padding-bottom: 50px;
+  margin-top: 5%;
+}
+
 h1{
   display: flex;
   align-items: center;
@@ -5,16 +10,12 @@ h1{
   font-size: 40px;
 }
 
-
 mat-form-field{
   width: 50%;
   margin-bottom: 5px;
   margin-left: 20%;
 }
 
-form{
-  margin-top: 5%;
-}
 
 .button-save{
   color: white;
@@ -25,6 +26,19 @@ form{
   cursor: pointer;
   width: 10%;
   float: right;
-  margin-right: 20%;
+  margin-right: 30%;
+  border-radius: 5px;
+}
+
+.button-delete{
+  color: #f4f5f8;
+  background-color: #414141;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 10%;
+  margin-left: 20%;
+  float: left;
   border-radius: 5px;
 }

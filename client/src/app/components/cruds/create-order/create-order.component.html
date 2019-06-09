@@ -1,5 +1,15 @@
 <h1>CADASTRAR ORDEM DE MANUTENÇÃO</h1>
 <form [formGroup]="orderForm" class="form-order">
+
+  <mat-form-field *ngIf="orders.length>1">
+    <mat-label>Ordem de Manutenção</mat-label>
+    <mat-select formControlName="id" (blur)="treatOrder()">
+      <mat-option *ngFor="let order of orders" [value]="order.id">
+        {{order.orderNumber}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
   <mat-form-field class="title">
     <input formControlName="orderNumber" matInput placeholder="Número da Ordem">
   </mat-form-field><br>
@@ -93,8 +103,13 @@
   <mat-form-field class="notes">
     <textarea formControlName="note" matInput placeholder="Observações"></textarea>
   </mat-form-field><br>
-  
+
   <div class="button-save">
-    <button type="submit" (click)="createOrder()" mat-button>Salvar</button>
+    <button type="submit" (click)="saveOrder()" mat-button>Salvar</button>
   </div>
+
+  <div class="button-delete" *ngIf="order?.id">
+    <button type="submit" (click)="deleteOrder()" mat-button>Deletar</button>
+  </div>
+  
 </form>

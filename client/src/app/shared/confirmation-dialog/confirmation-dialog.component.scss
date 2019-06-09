@@ -1,0 +1,19 @@
+.buttons {
+  margin-top: 15px;
+  display: flex; 
+  justify-content: space-between;
+}
+
+.button-confirm {
+  color: white;
+  background-color: #980606;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-cancel {
+  color: #f4f5f8;
+  background-color: #414141;
+  cursor: pointer;
+  border-radius: 5px;
+}

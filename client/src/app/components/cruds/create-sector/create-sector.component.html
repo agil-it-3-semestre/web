@@ -17,4 +17,8 @@
   <div class="button-save">
     <button type="submit" (click)="saveSector()" mat-button>Salvar</button>
   </div>
+  
+  <div class="button-delete" *ngIf="sector.id">
+    <button type="submit" (click)="deleteSector()" mat-button>Deletar</button>
+  </div>
 </form>
