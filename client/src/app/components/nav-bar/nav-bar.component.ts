@@ -36,20 +36,24 @@ export class NavBarComponent implements OnInit {
 
     link2 = {
       "name":"Ordens",
-      "icon":"assignment_ind",
+      "icon":"build",
       "redirect":"create-order"
     };
 
+    // settings
+    // local_laundry_service
+    // memory
+
     link3 = {
       "name":"Máquinas",
-      "icon":"ac_unit",
+      "icon":"android",
       "redirect":"create-machine"
     };
 
     link4 = {
-      "name":"Monitor",
-      "icon":"remove_red_eye",
-      "redirect":""
+      "name":"Usuários",
+      "icon":"person",
+      "redirect":"create-user"
     };
 
     this.links.push(link1);

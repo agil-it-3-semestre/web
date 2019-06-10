@@ -42,9 +42,23 @@ export class Requests implements BasicsRequests {
     return ProviderHelper.get(this.http)
   }
 
-  public async get(registryId: number) {
+  public async get(registryId: number, queryParams?: any) {
+
+    let params = ''
+
+    if (queryParams!==undefined && queryParams!==null && queryParams.length > 0) {
+      queryParams.map((paramQuery:any) => {
+        if (params == '') {
+          params = '?'
+        } else {
+          params = params + '&'
+        }
+
+        params = params + paramQuery.name + '=' + paramQuery.value
+      })
+    }
     
-    this.http.url = this.getUrl() + '/' + registryId
+    this.http.url = this.getUrl() + '/' + registryId + params
     return ProviderHelper.get(this.http)
   }
   

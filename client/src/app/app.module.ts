@@ -14,10 +14,7 @@ import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MonitorModule } from './components/monitor/monitor.module';
-import { LoginComponent } from './login/login.component';
 import { NavBarModule } from './components/nav-bar/nav-bar.module';
-import { CreateOrderComponent } from './components/cruds/create-order/create-order.component';
-import { CreateUserComponent } from './components/cruds/create-user/create-user.component';
 import { HttpProvider } from './core/http/http';
 import { CreateMachineModule } from './components/cruds/create-machine/create-machine.module';
 import { CreateSectorModule } from './components/cruds/create-sector/create-sector.module';
@@ -26,6 +23,9 @@ import { ConfirmationDialogModule } from './shared/confirmation-dialog/confirmat
 import { MessageDialogComponent } from './shared/message-dialog/message-dialog.component';
 import { MessageDialogModule } from './shared/message-dialog/message-dialog.module';
 import { DialogHelper } from './shared/helpers/dialog-helper';
+import { CreateUserModule } from './components/cruds/create-user/create-user.module';
+import { CreateOrderModule } from './components/cruds/create-order/create-order.module';
+import { LoginModule } from './login/login.module';
 
 
 export const AGILIT_FORMATS = {
@@ -42,10 +42,7 @@ export const AGILIT_FORMATS = {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    CreateOrderComponent,
-    CreateUserComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -53,15 +50,18 @@ export const AGILIT_FORMATS = {
     AppRoutingModule,
     LayoutModule,
     MaterialModule,
-    MonitorModule,
-    CreateSectorModule,
     NavBarModule,
     FormsModule,
     ReactiveFormsModule,
-    CreateMachineModule,
     HttpModule,
     MomentDateModule, 
     RxReactiveFormsModule,
+    LoginModule,
+    MonitorModule,
+    CreateSectorModule,
+    CreateMachineModule,
+    CreateOrderModule,
+    CreateUserModule,
     ConfirmationDialogModule,
     MessageDialogModule
   ],

@@ -17,4 +17,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         CreateOrderComponent
     ]
 })
-export class CreateMachineModule { }
+export class CreateOrderModule { }

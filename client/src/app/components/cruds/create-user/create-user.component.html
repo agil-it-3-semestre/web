@@ -1,3 +1,73 @@
-<p>
-  create-user works!
-</p>
+<h1>CADASTRAR USUÁRIO</h1>
+<form [formGroup]="userForm" class="form-order">
+  
+  <mat-form-field *ngIf="users.length>1">
+    <mat-label>Usuário</mat-label>
+    <mat-select formControlName="id" (blur)="treatUser()">
+      <mat-option *ngFor="let user of users" [value]="user.id">
+        {{user.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+  
+  <mat-form-field class="title">
+    <input formControlName="name" type="text" matInput placeholder="Nome">
+  </mat-form-field><br>
+   
+  <mat-form-field>
+    <mat-label>Perfil do Usuário</mat-label>
+    <mat-select formControlName="role">
+      <mat-option *ngFor="let role of roles" [value]="role.id">
+        {{role.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field class="title">
+    <input formControlName="email" type="email" matInput placeholder="Email">
+    <mat-hint>exemplo@email.com.br</mat-hint>
+  </mat-form-field><br><br>
+
+  <div class="password-generation">
+    <button type="submit" (click)="generatePassword()" mat-button>
+        <i class="material-icons">lock</i>
+        Gerar Senha
+    </button>
+
+    <mat-checkbox formControlName="forceChangePassword" color="accent">
+      Trocar Senha no Primeiro Login
+    </mat-checkbox>
+  </div>
+
+  <mat-form-field class="title">
+    <input matInput placeholder="Senha" [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+    <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field><br>
+
+  <mat-form-field class="title">
+    <input formControlName="contact" type="text" matInput placeholder="Contato">
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <input formControlName="bornDate" matInput [matDatepicker]="picker" placeholder="Data de Nascimento">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field><br>
+
+  <div class="genderDiv">
+    <label>Gênero</label>
+    <mat-radio-group formControlName="gender" color="accent" class="genderRadio">
+      <mat-radio-button *ngFor="let gender of genders" class="genderRadioButton" [value]="gender.id">
+        {{gender.name}}
+      </mat-radio-button>
+    </mat-radio-group><br>
+  </div>
+    
+  <div class="button-save">
+    <button type="submit" (click)="saveUser()" mat-button>Salvar</button>
+  </div>
+  
+  <div class="button-delete" *ngIf="user.id">
+    <button type="submit" (click)="deleteUser()" mat-button>Deletar</button>
+  </div>
+</form>

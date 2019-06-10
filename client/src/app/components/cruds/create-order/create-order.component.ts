@@ -4,7 +4,6 @@ import { EquipmentProvider } from '../../../providers/equipment.service';
 import { MaintenanceOrderProvider } from '../../../providers/maintenance-order.service';
 import { UserProvider } from '../../../providers/user.service';
 import { DialogHelper } from '../../../shared/helpers/dialog-helper';
-import { RxwebValidators } from '@rxweb/reactive-form-validators';
 
 
 
@@ -73,7 +72,7 @@ export class CreateOrderComponent implements OnInit {
         return
       }
 
-      this.dialogHelper.enviarMensagem(`${this.moduleCRUD}`,`${this.moduleCRUD} deletado com sucesso`);
+      this.dialogHelper.enviarMensagem(`${this.moduleCRUD}`,`${this.moduleCRUD} deletada com sucesso`);
 
       this.reloadObjects();
       this.resetForm()
@@ -85,10 +84,6 @@ export class CreateOrderComponent implements OnInit {
   }
   
   async saveOrder() {
-
-    let teste=this.getOrderObject()
-
-
 
     if (this.orderForm.invalid) {
       this.dialogHelper.enviarMensagem(`${this.moduleCRUD}`,'Preencha todos os Campos!')
@@ -167,6 +162,7 @@ export class CreateOrderComponent implements OnInit {
     }
     
   }
+
   async treatOrder() {
     let id = this.orderForm.get('id').value;
 

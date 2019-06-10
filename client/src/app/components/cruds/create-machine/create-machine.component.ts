@@ -213,7 +213,7 @@ export class CreateMachineComponent implements OnInit {
     this.machineForm.reset();
 
     for( let i in this.machineForm.controls ) {
-        this.machineForm.controls[i].setErrors(null);
+      this.machineForm.controls[i].setErrors(null);
     }
 }
 

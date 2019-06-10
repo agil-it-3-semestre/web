@@ -215,12 +215,12 @@ $primary: (
 
 //*
 $my-app-primary: mat-palette($mat-blue-grey);
-$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+$my-app-accent:  mat-palette($primary, 500, 900, A100);
 $my-app-warn:    mat-palette($mat-deep-orange);
-/*/*
+/*/
 $my-app-primary: mat-palette($primary);
-$my-app-accent:  mat-palette($dark);
-$my-app-warn:    mat-palette($light);
+$my-app-accent:  mat-palette($light);
+$my-app-warn:    mat-palette($dark);
 /**/
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
