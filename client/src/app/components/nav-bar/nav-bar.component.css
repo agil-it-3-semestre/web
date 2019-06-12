@@ -1,10 +1,7 @@
 .sidenav-container {
   height: 100%;
-}
-
-.sidenav {
-  width: 150px;
-  background-color: silver;
+  background-color: #980606;
+  width: 100%;
 }
 
 .sidenav .mat-toolbar {
@@ -15,13 +12,4 @@
   position: sticky;
   top: 0;
   z-index: 1;
-}
-
- img{
-  width: 110%;
- }
-
-.logoMenu{
-  width: 80%;
-  padding-top: 10px;
 }

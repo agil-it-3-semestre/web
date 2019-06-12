@@ -1,6 +1,15 @@
 i.material-icons {
   vertical-align: middle;
-  color: black;
-  margin-right: 10%;
+  color: white;
+  margin-right:30%;
 }
 
+.labels{
+  font-size: 25px !important;
+  color: white !important;
+  margin-bottom: 30px;
+}
+
+/* .icon{
+  width: 40% !important;
+} */

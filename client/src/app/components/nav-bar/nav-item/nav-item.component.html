@@ -1,11 +1,11 @@
-<a *ngIf="redirect; else noRedirect" mat-list-item [routerLink]="redirect">
-    <i *ngIf="icone" class="material-icons">{{ icone }}</i>
+<a class="labels" *ngIf="redirect; else noRedirect" mat-list-item [routerLink]="redirect">
+    <i *ngIf="icone" class="material-icons icon">{{ icone }}</i>
     {{ nome }}
 </a>
 
 <ng-template #noRedirect>
-    <a mat-list-item>
-        <i *ngIf="icone" class="material-icons">{{ icone }}</i>
+    <a mat-list-item class="labels">
+        <i *ngIf="icone" class="material-icons icon">{{ icone }}</i>
         {{ nome }}
     </a>
 </ng-template>

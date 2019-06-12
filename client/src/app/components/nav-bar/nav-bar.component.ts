@@ -46,7 +46,7 @@ export class NavBarComponent implements OnInit {
 
     link3 = {
       "name":"Máquinas",
-      "icon":"android",
+      "icon":"settings",
       "redirect":"create-machine"
     };
 
