@@ -26,7 +26,7 @@ import { DialogHelper } from './shared/helpers/dialog-helper';
 import { CreateUserModule } from './components/cruds/create-user/create-user.module';
 import { CreateOrderModule } from './components/cruds/create-order/create-order.module';
 import { LoginModule } from './login/login.module';
-
+import { CreateOperationsModule } from './components/cruds/create-operations/create-operations.module';
 
 export const AGILIT_FORMATS = {
   parse: {
@@ -42,7 +42,7 @@ export const AGILIT_FORMATS = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +61,7 @@ export const AGILIT_FORMATS = {
     CreateSectorModule,
     CreateMachineModule,
     CreateOrderModule,
+    CreateOperationsModule,
     CreateUserModule,
     ConfirmationDialogModule,
     MessageDialogModule

@@ -10,6 +10,7 @@ import { CreateOrderComponent } from "./components/cruds/create-order/create-ord
 import { CreateMachineComponent } from './components/cruds/create-machine/create-machine.component';
 import { CreateUserComponent } from './components/cruds/create-user/create-user.component';
 import { CreateSectorComponent } from './components/cruds/create-sector/create-sector.component';
+import { CreateOperationsComponent } from './components/cruds/create-operations/create-operations.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,8 @@ const routes: Routes = [
   { path: "create-machine", component: CreateMachineComponent},
   { path: "create-user", component: CreateUserComponent},
   { path: "create-sector", component: CreateSectorComponent},
+  { path: "create-operations", component: CreateOperationsComponent},
+
 ];
 
 @NgModule({

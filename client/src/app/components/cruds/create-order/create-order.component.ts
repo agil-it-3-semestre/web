@@ -4,6 +4,7 @@ import { EquipmentProvider } from '../../../providers/equipment.service';
 import { MaintenanceOrderProvider } from '../../../providers/maintenance-order.service';
 import { UserProvider } from '../../../providers/user.service';
 import { DialogHelper } from '../../../shared/helpers/dialog-helper';
+import {Router} from "@angular/router";
 
 
 
@@ -30,7 +31,8 @@ export class CreateOrderComponent implements OnInit {
     private equipmentProvider : EquipmentProvider,
     private userProvider : UserProvider,
     private maintenanceOrderProvider : MaintenanceOrderProvider,
-    public dialogHelper: DialogHelper) { }
+    public dialogHelper: DialogHelper,
+    public router: Router) { }
 
   ngOnInit() {
     this.loadOrders()
@@ -73,9 +75,8 @@ export class CreateOrderComponent implements OnInit {
       }
 
       this.dialogHelper.enviarMensagem(`${this.moduleCRUD}`,`${this.moduleCRUD} deletada com sucesso`);
-
       this.reloadObjects();
-      this.resetForm()
+      this.resetForm();
 
     } catch (error) {
       this.dialogHelper.enviarMensagem(`${this.moduleCRUD}`,error)
@@ -127,9 +128,8 @@ export class CreateOrderComponent implements OnInit {
         return
       }
 
-      this.dialogHelper.enviarMensagem(`${this.moduleCRUD}`,`${this.moduleCRUD} cadastrada com sucesso!`);
-      this.reloadObjects()
-      this.resetForm()
+      await this.dialogHelper.enviarMensagem(`${this.moduleCRUD}`,`${this.moduleCRUD} cadastrada com sucesso!`);
+      this.router.navigate(['create-operations']);
     } catch (error) {
       this.dialogHelper.enviarMensagem(`${this.moduleCRUD}`,error)
     }
